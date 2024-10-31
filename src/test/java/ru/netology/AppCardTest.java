@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class appCardTest {
+public class AppCardTest {
     private WebDriver driver;
 
     @BeforeAll
@@ -35,7 +35,7 @@ public class appCardTest {
     }
 
     @Test
-    public void PositiveTest() {
+    public void positiveTest() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79530000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
@@ -45,7 +45,7 @@ public class appCardTest {
     }
 
     @Test
-    public void NegativeName() {
+    public void negativeName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов1");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79530000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
@@ -55,7 +55,7 @@ public class appCardTest {
     }
 
     @Test
-    public void EmptyName() {
+    public void emptyName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79530000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
@@ -65,7 +65,7 @@ public class appCardTest {
     }
 
     @Test
-    public void PhoneHaveNot11Symbols() {
+    public void phoneHaveNot11Symbols() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+7953000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
@@ -75,7 +75,7 @@ public class appCardTest {
     }
 
     @Test
-    public void PhoneWithoutPlus() {
+    public void phoneWithoutPlus() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("79530000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
@@ -85,7 +85,7 @@ public class appCardTest {
     }
 
     @Test
-    public void EmptyPhone() {
+    public void emptyPhone() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
@@ -95,7 +95,7 @@ public class appCardTest {
     }
 
     @Test
-    public void EmptyCheckBox() {
+    public void emptyCheckBox() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79530000000");
         driver.findElement(By.cssSelector("button")).click();
