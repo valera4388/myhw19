@@ -50,7 +50,7 @@ public class AppCardTest {
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79530000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
-        String actual = driver.findElement(By.cssSelector(".input_invalid .input__sub")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id = name].input_invalid .input__sub")).getText().trim();
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", actual);
     }
 
@@ -60,7 +60,7 @@ public class AppCardTest {
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79530000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
-        String actual = driver.findElement(By.cssSelector(".input_invalid .input__sub")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id = name].input_invalid .input__sub")).getText().trim();
         assertEquals("Поле обязательно для заполнения", actual);
     }
 
@@ -70,7 +70,7 @@ public class AppCardTest {
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+7953000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
-        String actual = driver.findElement(By.cssSelector(".input_invalid .input__sub")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id = phone].input_invalid .input__sub")).getText().trim();
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual);
     }
 
@@ -80,7 +80,7 @@ public class AppCardTest {
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("79530000000");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
-        String actual = driver.findElement(By.cssSelector(".input_invalid .input__sub")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id = phone].input_invalid .input__sub")).getText().trim();
         assertEquals("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.", actual);
     }
 
@@ -90,7 +90,7 @@ public class AppCardTest {
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
-        String actual = driver.findElement(By.cssSelector(".input_invalid .input__sub")).getText().trim();
+        String actual = driver.findElement(By.cssSelector("[data-test-id = phone].input_invalid .input__sub")).getText().trim();
         assertEquals("Поле обязательно для заполнения", actual);
     }
 
@@ -99,7 +99,7 @@ public class AppCardTest {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иванов Иван");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79530000000");
         driver.findElement(By.cssSelector("button")).click();
-        boolean actual = driver.findElement(By.cssSelector(".input_invalid[data-test-id='agreement']")).isDisplayed();
+        boolean actual = driver.findElement(By.cssSelector("[data-test-id = agreement].input_invalid .checkbox__text")).isDisplayed();
         assertTrue(actual);
     }
 }
